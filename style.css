@@ -1,0 +1,548 @@
+/* ========================================
+   1. Global styles
+   ======================================== */
+
+:root {
+  --background: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --border: #dedede;
+  --link: #315f91;
+  --content-width: 850px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text);
+  line-height: 1.3;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+
+/* ========================================
+   2. Header and navigation
+   ======================================== */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-logo {
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.site-logo:hover {
+  text-decoration: none;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-header nav a {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+  color: var(--text);
+}
+
+.site-header nav a.active {
+  font-weight: 600;
+}
+
+
+/* ========================================
+   3. Main content and footer
+   ======================================== */
+
+.container {
+  width: min(var(--content-width), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+main.container {
+  min-height: 70vh;
+}
+
+.site-footer {
+  margin-top: 35px;
+  padding: 18px 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ========================================
+   4. Homepage profile
+======================================== */
+
+.profile {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+  padding: 80px 0 64px;
+}
+
+.profile-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.profile-content {
+  padding-top: 8px;
+}
+
+.intro p {
+  margin-bottom: 18px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.about-extra {
+  border-top: 1px solid var(--border);
+  padding: 36px 0 50px;
+}
+
+.about-extra h2 {
+  font-size: 24px;
+}
+
+.about-extra p {
+  color: var(--muted);
+}
+
+
+/* ========================================
+   5. CV page
+   ======================================== */
+
+.cv-page {
+  max-width: 850px;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.cv-page h1 {
+  margin-bottom: 6px;
+}
+
+/* Space between CV sections */
+.cv-page .cv-section {
+  margin-top: 20px;
+}
+
+/* Section headings and their horizontal rules */
+.cv-page .cv-section h2 {
+  margin: 0;
+  padding: 0 0 5px;
+  border-bottom: 1px solid var(--text);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+/* Keep the entries in a two-column layout:
+   year on the left, description on the right. */
+.cv-page .cv-table {
+  width: 100%;
+}
+
+.cv-page .cv-row {
+  display: grid;
+  grid-template-columns: 125px minmax(0, 1fr);
+  column-gap: 20px;
+  align-items: start;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Left-hand year/date column */
+.cv-page .cv-year {
+  min-width: 0;
+  padding-top: 1px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+/* Right-hand description column */
+.cv-page .cv-detail {
+  min-width: 0;
+}
+
+.cv-page .cv-detail h3 {
+  margin: 0 0 1px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.cv-page .cv-detail p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cv-page .cv-detail .cv-institution {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.cv-page .cv-detail p + p {
+  margin-top: 3px;
+}
+
+.cv-page .cv-detail ul {
+  margin-top: 3px;
+  margin-bottom: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cv-page .cv-detail li {
+  margin-bottom: 0;
+}
+
+.cv-page .cv-detail a {
+  overflow-wrap: anywhere;
+}
+
+/* Optional CV download link/button */
+.cv-page .cv-download {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 18px;
+}
+
+/* Optional research-interest grid */
+.cv-page .interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+}
+
+.cv-page .interests-grid div {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* ========================================
+   6. Research page
+   ======================================== */
+
+.research-page {
+  padding-top: 42px;
+  padding-bottom: 50px;
+}
+
+.research-page > h1 {
+  margin-bottom: 12px;
+}
+
+.page-intro {
+  margin-bottom: 24px;
+}
+
+.research-list {
+  border-top: 1px solid var(--border);
+}
+
+.research-item {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Collapsed header: year | title (+ meta below, right-aligned) | icon.
+   A fixed minimum height gives every item the same spacing, and the
+   meta line is pinned to the bottom-right corner. Because the meta
+   line has its own grid row, it can never overlap the title. */
+.research-item summary {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 20px;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 2px;
+  align-items: start;
+  padding: 12px 0 5px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.research-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.research-item summary:hover .paper-title {
+  color: var(--link);
+}
+
+.paper-year {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: 2px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Always reserve exactly two lines, so one-line and two-line
+   titles give items of identical height. */
+.paper-title {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 2.8em;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.paper-meta {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: end;
+  justify-self: end;
+  text-align: right;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.expand-icon {
+  grid-column: 3;
+  grid-row: 1;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.expand-icon::before {
+  content: "+";
+}
+
+.research-item[open] .expand-icon::before {
+  content: "\2212";
+}
+
+/* Expanded content, aligned with the title column */
+.research-content {
+  padding: 0 28px 24px 72px;
+}
+
+.research-content p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 14px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.research-content img {
+  max-width: 100%;
+  margin-top: 12px;
+  border-radius: 3px;
+}
+
+
+/* ========================================
+   7. Responsive layout
+   ======================================== */
+
+@media (max-width: 650px) {
+  .site-header {
+    padding: 16px 20px;
+    gap: 14px;
+  }
+
+  .site-header nav {
+    gap: 15px;
+  }
+
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .about-layout {
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 22px;
+    padding-top: 30px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .cv-page {
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+
+  .cv-page .cv-section {
+    margin-top: 17px;
+  }
+
+  .cv-page .cv-row {
+    grid-template-columns: 105px minmax(0, 1fr);
+    column-gap: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .cv-page .cv-year {
+    white-space: normal;
+  }
+
+  .cv-page .interests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-page {
+    padding-top: 30px;
+  }
+
+  .research-item summary {
+    grid-template-columns: 44px minmax(0, 1fr) 20px;
+    column-gap: 12px;
+  }
+
+  .research-content {
+    padding: 0 0 22px 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .site-header nav {
+    gap: 20px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-image,
+  .profile-image {
+    max-width: 200px;
+  }
+
+  /* Preserve the CV's two columns on small screens,
+     while making the date column narrower. */
+  .cv-page .cv-row {
+    grid-template-columns: 82px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  .cv-page .cv-year {
+    font-size: 12px;
+  }
+
+  .cv-page .cv-detail h3 {
+    font-size: 14px;
+  }
+}
